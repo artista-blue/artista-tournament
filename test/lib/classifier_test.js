@@ -15,15 +15,12 @@ function p(msg) {
 
 describe('Classifier', function () {
 
-    describe('classify', function () {
+    describe('constructor', function () {
 	it('', function () {
 	    const dirname = path.join(BASE_DIR, "2016-kawaguchi");
 	    const entries = EntrySheetReader.readDir(dirname);
-	    p(entries)
-	    p('!!!')
 	    const classifier = new Classifier(entries);
-	    const map = classifier.classify('マッソギ');
-	    p(JSON.stringify(map, null, 2));
+	    classifier.dump();
 	});
     });
 });
