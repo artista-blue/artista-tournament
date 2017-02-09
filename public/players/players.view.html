@@ -1,0 +1,27 @@
+<span  class="col-md-10 panel panel-default" style="height:100%;">
+  <h2>Players</h2>
+
+  <table class="table table-border table-condensed table-stripe">
+    <tr>
+      <th>No.</th>
+      <th>氏名</th>
+      <th>フリガナ</th>
+      <th>所属</th>
+      <th>級・段</th>
+      <th>トゥル</th>
+      <th>マッソギ</th>
+      <th>スペシャル</th>
+    </tr>
+    <tr ng-repeat="player in players">
+      <td>{{player.id}}</td>
+      <td>{{player.name}}</td>
+      <td>{{player.kana}}</td>
+      <td>{{player.dojo}}</td>
+      <td>{{player.level}}</td>
+      <td>{{player.tul}}</td>
+      <td>{{player.massogi}}</td>
+      <td>{{player.special}}</td>
+    </tr>
+  </table>
+
+</span>
