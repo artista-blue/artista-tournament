@@ -21,6 +21,10 @@ let app, Controllers;
 		controller: 'EventsViewController',
 		templateUrl: 'events/events.view.html'
 	    }).
+	    when("/tournament", {
+		controller: 'TournamentViewController',
+		templateUrl: 'tournament/tournament.view.html'
+	    }).
 	    otherwise({
 		redirectTo: '/'
 	    });

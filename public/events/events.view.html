@@ -1,8 +1,8 @@
 <span  class="col-md-10 panel panel-default" style="height:100%;">
   <h2>Events</h2>
 
-  <div ng-repeat="event in events">
-    <h3>{{event.name}}</h3>
+  <div ng-repeat="clazz in clazzes">
+    <h3 ng-click="tournamentView(clazz)">{{clazz.name}}</h3>
     <table class="table table-border table-condensed table-stripe">
       <tr>
 	<th>No.</th>
@@ -14,7 +14,7 @@
 	<th>マッソギ</th>
 	<th>スペシャル</th>
       </tr>
-      <tr ng-repeat="player in event.players">
+      <tr ng-repeat="player in clazz.players">
 	<td>{{player.id}}</td>
 	<td>{{player.name}}</td>
 	<td>{{player.kana}}</td>
