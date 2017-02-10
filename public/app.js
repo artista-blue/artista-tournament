@@ -13,6 +13,10 @@ let app, Controllers;
 
     app.config(['$routeProvider', function($routeProvider) {
 	$routeProvider.
+	    when("/admin", {
+		controller: 'AdminViewController',
+		templateUrl: 'admin/admin.view.html'
+	    }).
 	    when("/players", {
 		controller: 'PlayersViewController',
 		templateUrl: 'players/players.view.html'

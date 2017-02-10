@@ -36,6 +36,16 @@
 	    $location.path('/tournament');	    
 	};
 
+	$scope.openMergeDialog = () => {
+	};
+
+	$scope.merge = () => {
+	    // merge request via API
+
+	    // reload
+	    
+	};
+
 	$scope.$watch('eventType', () => {
 	    getData();
 	});

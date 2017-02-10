@@ -1,8 +1,10 @@
 <span  class="col-md-10 panel panel-default" style="height:100%;">
   <h2>Events</h2>
 
+  <button type="button" ng-click="openMergeDialog()" class="btn btn-danger" data-toggle="modal" data-target="#merge_dialog">統合</button></li>
+  
   <div ng-repeat="clazz in clazzes">
-    <h3 ng-click="tournamentView(clazz)">{{clazz.name}}</h3>
+    <a ng-click="tournamentView(clazz)"><h3>{{clazz.name}}</h3></a>
     <table class="table table-border table-condensed table-stripe">
       <tr>
 	<th>No.</th>
@@ -27,3 +29,37 @@
     </table>
   </div>
 </span>
+
+<div class="modal" id="merge_dialog" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="modal-label">クラス統合</h4>
+      </div>
+      <div class="modal-body">
+	<div>
+	  <span>クラス：</span>
+	  <span>
+	    <select ng-model="clazz1" ng-options"clazz as clazz in clazzes"></select>
+	  </span>
+	</div>
+	<div>
+	  <span>クラス：</span>
+	  <span>
+	    <select ng-model="clazz2" ng-options"clazz as clazz in clazzes"></select>
+	  </span>
+	</div>
+	<div>
+	  <button type="button" ng-click="merge()">統合</button>
+	</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">OK</button>
+      </div>
+    </div>
+  </div>
+</div>

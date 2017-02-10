@@ -15,6 +15,10 @@ app.factory('Events', ['$resource', function($resource) {
     return $resource('/api/v1/events');
 }]);
 
+app.factory('Competitions', ['$resource', function($resource) {
+    return $resource('/api/v1/competitions');
+}]);
+
 // Directives
 
 
