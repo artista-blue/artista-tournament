@@ -44,6 +44,10 @@ let app, Controllers;
 	    $location.path('/');
 	};
 
+	$scope.adminView = function () {
+	    $location.path('/admin');
+	};
+	
 	$scope.playersView = function () {
 	    $location.path('/players');
 	};

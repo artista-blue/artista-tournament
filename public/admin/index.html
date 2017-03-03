@@ -1,0 +1,41 @@
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="icon" type="image/png" href="../images/xxx.png" sizes="32x32">
+  </head>
+  <body ng-controller="AdminMainController" style="padding:0px;">
+
+    <div id="loading"></div>
+    
+    <!-- header -->
+    <div ng-include="'../header.view.html'"></div>
+
+    <!-- side menu -->    
+    <div ng-include="'side_menu.view.html'"></div>
+    
+    <div ng-view></div>
+
+    <script src="../bower_components/moment/min/moment-with-locales.min.js"></script>
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/angular-route/angular-route.min.js"></script>
+    <script src="../bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+
+    <script src="admin_app.js"></script>
+    <script src="../services.js"></script>
+    <script src="competitions/competitions.controller.js"></script>
+    <!--
+    <script src="admin/admin.controller.js"></script>
+    <script src="players/players.controller.js"></script>
+    <script src="events/events.controller.js"></script>
+    <script src="tournament/tournament.controller.js"></script>
+    -->
+  </body>
+</html>

@@ -17,6 +17,7 @@ router.get('/', function(req, res) {
 	}
 	const classifier = new Classifier(players);
 	const data = classifier.getClass(eventType);
+	console.log(data)
 	res.status(200).json(data);
     });
 });
