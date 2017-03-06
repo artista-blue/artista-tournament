@@ -1,49 +1,26 @@
 <span  class="col-md-10 panel panel-default" style="height:100%;">
   <h2>Competitions</h2>
 
-  <div class="panel panel-default">
-    <div>Competition list</div>
-    <div ng-repeat="competition in competitions">
-      <table class="table table-border">
-	<tr>
-	  <th>id</th>
-	  <th>name</th>
-	</tr>
-	<tr>
-	  <td>{{competition._id}}</td>
-	  <td>{{competition.name}}</td>
-	</tr>
-      </table>
-    </div>
+    <table class="table table-border">
+      <tr>
+	<th>id</th>
+	<th>name</th>
+	<th>entry form</th>
+      </tr>
+      <tr ng-repeat="competition in competitions" ng-click="editCompetition(competition)">
+	<td>{{competition._id}}</td>
+	<td>{{competition.name}}</td>
+	<td>
+	  <button type="button" class="btn btn-sm btn-info" ng-click="download(competition)">
+	    download
+	  </button>
+	</td>
+      </tr>
+    </table>
   </div>
 
-  <div id="create_competition_view" class="panel panel-default">
-    <div>
-      <h3>Competition:</h3>
-    </div>
-
-    <div>
-      <label>name:</label><input type="text" ng-model="newCompetition.name">
-    </div>
-
-    <div ng-repeat="event in newCompetition.events" class="panel panel-default">
-      <label>Event: </label><input type="text" ng-model="event.name"</h4>
-      <div ng-repeat="clazz in event.classes">
-	<label>class{{$index+1}}: </label><input type="text" ng-model="clazz.name">
-	<button type="button" ng-click="delClass(event, clazz)">-</button>
-	<button type="button" ng-if="$last" ng-click="addClass(event, $last)">+</button>
-      </div>
-    </div>
-
-    <div>
-      <span><button type="button" ng-click="addEvent()" class="btn btn-sm btn-primary">Create New Event</button></span>
-    </div>
+  <div>
+    <button type="button" class="btn btn-primary" ng-click="createCompetition()">Create new competition</button>
   </div>
-
-    <div>
-      <span><button type="button" ng-click="createNewCompetition()" class="btn btn-primary pull-right">Create New Competiton</button></span>
-    </div>
-  </div>
-
 </span>
 
