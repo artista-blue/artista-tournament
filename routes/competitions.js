@@ -19,13 +19,22 @@ router.get('/', function(req, res) {
 
 router.post('/', function (req, res) {
     const json = req.body;
-    const competition = new Competition(json);
-    competition.save((err) => {
-	if (err) {
-	    res.status(500).end();
-	} else {
-	    res.status(200).end();
+    console.log(json)
+    const cond = {
+	_id: json._id
+    };
+    Competition.findOne(cond, function (err, competition) {
+	if (err) console.log(err);
+	if (!competition) {
+	    competition = new Competition(json);
 	}
+	competition.save((err) => {
+	    if (err) {
+		res.status(500).end();
+	    } else {
+		res.status(200).end();
+	    }
+	});
     });
 });
 

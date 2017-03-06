@@ -21,6 +21,10 @@ let app, Controllers;
 		controller: 'CompetitionRegisterViewController',
 		templateUrl: 'competitions/competition_register.view.html'
 	    }).
+	    when("/players", {
+		controller: 'PlayersViewController',
+		templateUrl: 'competitions/players.view.html'
+	    }).
 	    otherwise({
 		redirectTo: '/'
 	    });

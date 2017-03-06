@@ -17,5 +17,10 @@
 	    $scope.$parent.competition = competition;
 	    $location.path('competition');
 	};
+
+	$scope.playersView = function (competition) {
+	    $scope.$parent.competition = competition;
+	    $location.path('players');
+	};
     }
 })();
