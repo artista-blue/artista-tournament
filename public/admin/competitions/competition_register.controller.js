@@ -6,6 +6,15 @@
     CompetitionRegisterViewController.$inject = ['$scope', '$location', 'Competitions'];
     function CompetitionRegisterViewController ($scope, $location, Competitions) {
 
+	$scope.addMeta = function (meta) {
+	    const m = { "": "" };
+	    $scope.competition.metas.push(m);
+	};
+
+	$scope.delMeta = function (index) {
+	    $scope.competition.metas.splice(index, 1);
+	};
+	
 	$scope.addEvent = function () {
 	    const ev = {
 		id: $scope.competition.events.length + 1,
@@ -44,9 +53,6 @@
 	$scope.createNewCompetition = function () {
 	    const instance = new Competitions($scope.competition);
 	    instance.status = "INITIALIZED";
-	    instance.metas = [
-		"dojo"
-	    ];
 	    instance.$save(function (instance, resHeader) {
 		if (instance) {
 		    $location.path('competitions');
@@ -58,17 +64,16 @@
 	};
 
 	$scope.updateCompetition = function () {
-	    $scope.competition.metas = [
-		"dojo"
-	    ];
 	    $scope.competition.$save();
 	};
 
 	if (!$scope.competition) {
+	    const meta = {"":""};
 	    $scope.competition = {
 		id: 1,
 		name: "",
-		events: []
+		events: [],
+		metas: [ meta ]
 	    };
 	    $scope.addEvent();
 	    $scope.mode = 'create';

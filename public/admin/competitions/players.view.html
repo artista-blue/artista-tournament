@@ -1,10 +1,10 @@
 <span  class="col-md-10 panel panel-default" style="height:100%;">
-  <table class="table table-border">
+  <table class="table table-sm table-border">
     <tr>
       <th>氏名</th>
-      <th>カナ</th>
+      <th>ふりがな</th>
       <th ng-repeat="meta in competition.metas">
-	{{meta}}
+	{{meta.name}}
       </th>
       <th ng-repeat="event in competition.events">
 	{{event.name}}
@@ -14,10 +14,12 @@
       <td>{{player.name}}</td>
       <td>{{player.kana}}</td>
       <td ng-repeat="meta in competition.metas">
-	{{player.metas[meta]}}
+	{{player.metas[meta.physical_name]}}
       </td>
       <td ng-repeat="event in competition.events">
-	{{player.events[event.name]}}
+	<a href="/tournament?comp_id={{competition.id}}&event_name={{event.name}}&clazz_name={{player.events[event.physical_name]}}" target="_blank">
+	  {{player.events[event.physical_name]}}
+	</a>
       </td>
     </tr>
   </table>

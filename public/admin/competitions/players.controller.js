@@ -14,7 +14,7 @@
 	    id: $scope.competition.id
 	};
 	Players.query(cond, function (players) {
-	    /* temporary */
+	    /*
 	    $scope.players = players.map(function (player) {
 		player.events = {
 		    "massogi": player.massogi,
@@ -30,6 +30,8 @@
 		delete player.dojo;
 		return player;
 	    });
+	    temporary */
+	    $scope.players = players;
 	});
     }
 })();

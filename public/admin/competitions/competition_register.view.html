@@ -12,6 +12,16 @@
       <label>status:</label>{{competition.status}}
     </div>
 
+    <!-- meta -->
+    <div ng-repeat="meta in competition.metas">
+      <label>meta{{$indexx+1}}</label>
+      <input type="text" ng-model="meta.name">
+      <input type="text" ng-model="meta.physical_name">
+      <button type="button" ng-click="delMeta($index)"
+	      ng-disabled="competition.metas.length <= 1">-</button>
+      <button type="button" ng-if="$last" ng-click="addMeta(meta)">+</button>
+    </div>
+    
     <div ng-repeat="event in competition.events" class="panel panel-default"
 	 style="padding:10px;">
       <div>
@@ -19,7 +29,7 @@
 		ng-disabled="competition.events.length <= 1">Delete event</button>
       </div>
       <div>
-	<label>event name: </label><input type="text" ng-model="event.name">
+	<label>event name: </label><input type="text" ng-model="event.name"><label>event physical name: </label><input type="text" ng-model="event.physical_name">
       </div>
       <div ng-repeat="clazz in event.classes">
 	<label>class{{$index+1}}: </label><input type="text" ng-model="clazz.name">
